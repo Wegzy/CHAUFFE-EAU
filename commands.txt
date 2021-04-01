@@ -1,0 +1,479 @@
+    1  sudo apt update -y && sudo apt full-upgrade -y
+    2  clear
+    3  sudo apt update -y && sudo apt full-upgrade -y 
+    4  clear
+    5  date
+    6  while True:; date; ;
+    7  while True: date 
+    8  while true;do date; done
+    9  clear
+   10  sudo raspi-config
+   11  clear
+   12  sudo shutdown now
+   13  clear
+   14  sudo shutdown now
+   15  clear
+   16  sudo apt update -y 
+   17  sudo apt upgrade -y 
+   18  sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 
+   19  clear
+   20  sudo reboot 
+   21  sudo nano /etc/network/interfaces
+   22  sudo nano /etc/network/interfaces.d/
+   23  sudo nano /etc/network/interfaces.d
+   24  sudo nano /etc/network/interfaces
+   25  sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 
+   26  o
+   27  clear
+   28  lspci
+   29  sudo lspci
+   30  clear
+   31  lspci
+   32  su -
+   33  sudo passwd root
+   34  clear
+   35  su - 
+   36  clear && ip a
+   37  sudo nano /etc/network/interfaces
+   38  sudo reboot 
+   39  ping google.com
+   40  sudo reboot 
+   41  ping google.com
+   42  sudo apt update -y
+   43  clear
+   44  sudo nano /etc/network/interfaces
+   45  sudo reboot 
+   46  ping google.com
+   47  clear && python3.7-config 
+   48  clear
+   49  sudo iwconfig
+   50  sudo killall wpa_supplicant 
+   51  sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -iwlan0
+   52  sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 
+   53  clear
+   54  sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -iwlan0
+   55  sudo apt update -y 
+   56  sudo shutdown now
+   57  htop
+   58  sudo raspi-config
+   59  clear
+   60  sudo apt update -y && sudo apt full-upgrade -y && sudo rpi-update 
+   61  sudo reboot 
+   62  ip a
+   63  gtop
+   64  htop
+   65  clear
+   66  gpio 
+   67  clear
+   68  gpio -h
+   69  gpio readall
+   70  clear
+   71  gpio readall
+   72  uname -a
+   73  clear
+   74  history | grep wpa
+   75  clear && cat /etc/wpa_supplicant/wpa_supplicant.conf 
+   76  clear
+   77  sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -iwlan0
+   78  top
+   79  clear 
+   80  htop
+   81  clear
+   82  htop
+   83  clear
+   84  sudo apt dist-upgrade 
+   85  clear
+   86  gpio readall
+   87  pip install FaBoRTC_PCF2129
+   88  clear
+   89  ks
+   90  ls
+   91  cd Do
+   92  clear
+   93  cd Documents/
+   94  clear
+   95  ls
+   96  mkdir -p projet/rtc
+   97  cd projet/rtc/
+   98  clear
+   99  ls
+  100  clear
+  101  communication.py
+  102  nano communication.py
+  103  clear
+  104  chmod u+x communication.py 
+  105  clear
+  106  nano communication.py 
+  107  ./communication.py 
+  108  clear
+  109  sudo apt update -y 
+  110  clear
+  111  nano communication.py 
+  112  python3.7 communication.py 
+  113  nano communication.py 
+  114  ./communication.py 
+  115  clear
+  116  nano communication.py 
+  117  ./communication.py 
+  118  nano communication.py 
+  119  ./communication.py 
+  120  nano communication.py 
+  121  clear && sudo modprobe spi-bcm2835 
+  122  clear && sudo modprobe spi-gpio 
+  123  clear
+  124  sudo apt install -y tmux
+  125  clear
+  126  tmux
+  127  clear
+  128  wget https://raw.githubusercontent.com/raspberrypi/linux/rpi-3.10.y/Documentation/spi/spidev_test.c
+  129  gcc -o spidev_test spidev_test.c
+  130  ./spidev_test -D /dev/spidev0.0
+  131  ./spidev_test -D /dev/spidev0.1
+  132  clear
+  133  sudo pip install spidev
+  134  clear
+  135  sudo pip install spidev
+  136  clear
+  137  sudo apt install spidev
+  138  clear
+  139  python3.7 pip 
+  140  pip install spidev
+  141  clear && git clone https://github.com/doceme/py-spidev.git
+  142  ls
+  143  cd py-spidev/
+  144  ls
+  145  python3.7 setup.
+  146  python3.7 setup.py 
+  147  python3.7 setup.py -h
+  148  python3.7 setup.py build
+  149  python3.7 setup.py install
+  150  sudo python3.7 setup.py install
+  151  cd ..
+  152  cd..
+  153  cd ..
+  154  ls
+  155  cd rtc/
+  156  ls
+  157  clear
+  158  ./communication.py 
+  159  nano communication.py 
+  160  ./communication.py 
+  161  nano communication.py 
+  162  ./communication.py 
+  163  nano communication.py 
+  164  ./communication.py 
+  165  nano communication.py 
+  166  ./communication.py 
+  167  nano communication.py 
+  168  clear
+  169  ls
+  170  ./spidev_test -D /dev/spidev0.0
+  171  sudo shutdown now
+  172  clear
+  173  sudo raspi-config
+  174  sudo i2cdetect -y 1
+  175  clear
+  176  sudo i2cdetect -y 0
+  177  clear && sudo i2cdetect -y 1
+  178  sudo reboot 
+  179  clear
+  180  clear && sudo i2cdetect -y 1
+  181  sudo apt-get install -y python-smbus i2c-tools
+  182  clear
+  183  lsmod | grep i2c_
+  184  clear && sudo i2cdetect -y *
+  185  clear && sudo i2cdetect -y 
+  186  clear && sudo i2cdetect -y 0 && sudo i2cdetect -y 1
+  187  clear && sudo i2cdetect -y 0 ; sudo i2cdetect -y 1
+  188  /dev/i2c-0
+  189  /dev/i2c-
+  190  ls /dev/i2c-
+  191  clear
+  192  dmesg | grep i2c
+  193  sudo reboot 
+  194  clear && sudo i2cdetect -y 1
+  195  sudo nano /boot/config.txt 
+  196  clear
+  197  sudo reboot 
+  198  clear
+  199  sudo i2cdetect -y 1
+  200  sudo i2cdetect -y 0
+  201  sudo i2cdetect -y 1
+  202  sudo i2cdetect -F 1
+  203  clear
+  204  sudo i2cdetect -F 1
+  205  sudo reboot 
+  206  clear
+  207  htop
+  208  clear
+  209  i2cdetect -Y 1
+  210  i2cdetect -y 1
+  211  i2cdetect -F 1
+  212  clear
+  213  i2cget 
+  214  i2cget b
+  215  clear
+  216  i2cdetect -y 1
+  217  i2cdump -y 1 b
+  218  i2cdump -y 1 0x03 b
+  219  clear"
+  220  i2cdump -y 1 0x0 b
+  221  i2cdump -y 1 0x03 b
+  222  clear
+  223  i2cdetect -y 1
+  224  man i2cdetect 
+  225  i2cdetect -l
+  226  i2cdetect -a
+  227  i2cdetect -a 1
+  228  i2cdetect -yaqr
+  229  i2cdetect -yq
+  230  i2cdetect -y -q
+  231  i2cdetect -q
+  232  i2cdetect -ya
+  233  i2cdetect -y -a
+  234  clear
+  235  i2cdetect -l
+  236  i2cdetect -y 1
+  237  i2cdetect -y -a 1
+  238  i2cdetect -ya 1
+  239  i2cdetect -yaqrl 1
+  240  i2cdetect -y -a -q -r -l 1
+  241  i2cdetect -l 1
+  242  clear && sudo nano /boot/config.txt && clear
+  243  sudo reboot 
+  244  i2cdetect -l 1
+  245  i2cdetect -a 1
+  246  clear
+  247  sudo apt update -y && sudo apt full-upgrade -y 
+  248  i2cdetect -y 1
+  249  clearr
+  250  clear
+  251  sudo apt remove -y i2cdetect
+  252  man i2cdetect 
+  253  sudo apt remove -y i2c-tools 
+  254  sudo reboot 
+  255  clear
+  256  sudo apt install -y i2c-tools 
+  257  clear
+  258  i2cdetect -y 1
+  259  sudo reboot o
+  260  sudo reboot 
+  261  clear
+  262  i2cdetect -y 1
+  263  clear
+  264  i2cdetect -y 1
+  265  clear
+  266  i2cdetect -y 1
+  267  sudo reboot 
+  268  i2cdetect -y 1
+  269  clear && sudo raspi-config
+  270  i2cdetect -y 1
+  271  sudo reboot 
+  272  clear
+  273  i2cdetect -y 1
+  274  clear
+  275  i2cdetect -l
+  276  i2cdetect -r 0
+  277  i2cdetect -r 1
+  278  i2cdetect -y 1
+  279  sudo raspi-config
+  280  sudo reboot 
+  281  clear
+  282  i2cdetect -y 1
+  283  i2cdetect -y 0
+  284  sudo raspi-config 
+  285  clear
+  286  i2cdetect -y 0
+  287  i2cdetect -y 1
+  288  gpio readall
+  289  i2cdetect -y 1
+  290  sudo shutdown now
+  291  sudo apt update -y 
+  292  sudo apt upgrade -y 
+  293  clear
+  294  sudo i2cdetect -y 1
+  295  sudo reboot 
+  296  cler
+  297  clear
+  298  sudo i2cdetect -y 1
+  299  clear
+  300  sudo raspi-config 
+  301  clear
+  302  sudo reboot o
+  303  sudo i2cdetect -y 1
+  304  clear
+  305  sudo
+  306  sudo i2cdetect -y 1
+  307  sudo i2cdetect -y 0
+  308  sudo i2cdetect -y 1
+  309  clear && sudo i2cdetect -y 1
+  310  sudo nano /boot/config.txt 
+  311  sudo reboot 
+  312  clear
+  313  sudo apt update -y
+  314  sudo nano /boot/config.txt 
+  315  sudo reboot 
+  316  cmear
+  317  clear
+  318  clear && sudo i2cdetect -y 1
+  319  clear
+  320  sudo reboot 
+  321  clear
+  322  ls
+  323  clear
+  324  clear && sudo i2cdetect -y 1
+  325  sudo nano /boot/config.txt 
+  326  sudo reboot 
+  327  clear
+  328  clear && sudo i2cdetect -y 1
+  329  clear
+  330  sudo cp /etc/wpa_supplicant/wpa_supplicant.conf /media/pi/W7_PRO-SP1/wpa_supplicant.conf
+  331  sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 
+  332  sudo shutdown now
+  333  pi
+  334  sudo
+  335  su
+  336  raspberry
+  337  sudo cp /etc/wpa_supplicant/wpa_supplicant.conf /media/pi/W7_PRO-SP1/wpa_supplicant.conf
+  338  ifconfig
+  339  sudo apt install php
+  340  sudo apt-get update
+  341  nano
+  342  sudo nano /etc/environment
+  343  sudo apt install php
+  344  ifconfig
+  345  sudo apt-get update
+  346  ifconfig
+  347  nano blink01.py
+  348  pinout
+  349  sudo apt-get update
+  350  http
+  351  sudo apt-get update
+  352  sudo apt-get update
+  353  sudo apt-get upgrade -y
+  354  sudo apt-get install apache2 -y
+  355  --fix-missing
+  356  -fix-missing
+  357  sudo apt-get install apache2 --fix-missing
+  358  ip config
+  359  ifconfig
+  360  sudo nano /etc/environment
+  361  sudo apt-get upgrade -y
+  362  sudo apt-get update
+  363  sudo nano /etc/environment
+  364  sudo apt-get update
+  365  sudo nano /etc/environment
+  366  sudo apt-get install apache2 --fix-missing
+  367  shutdown
+  368  shutdown -c
+  369  -c
+  370  sudo shutdpwn -h now
+  371  sudo shutdown -h now
+  372  sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+  373  sudo nano /etc/anvironment
+  374  sudo nano /etc/environment
+  375  sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+  376  sudo ifdown wlan0
+  377  sudo ifup wlan0
+  378  sudo ifconfig wlan0 up 
+  379  sudo ifconfig wlan0 down
+  380  sudo reboot
+  381  if config; ifconfig; ef; ef; zf; z; fz; fze; fz; ed; ezd; z; d; zd; pi; raspberry
+  382  ifconfig
+  383  ls
+  384  ftp
+  385  wiringpi
+  386  cd/wiringpi
+  387  apt-get update
+  388  sudo apt-get update
+  389  sudo apt-get upgrade -y
+  390  sudo apt-get apache2 -y
+  391  sudo apt-get intall apache2 -y
+  392  sudo apt-get install apache2 -y
+  393  sudo apt-get install php5 libapache2-mod-php5 -y
+  394  sudo apt-get install git-core
+  395  git clone git://git.drogon.net/wiringPi
+  396  ls
+  397  sudo apt-get install wiringpi
+  398  ls
+  399  cd/wiringpi
+  400  ifconfig
+  401  sudo git pull origin
+  402  git clone git://git.drogon.net/wiringPi
+  403  sudo apt-get install wiringpi
+  404  gpio -v
+  405  sudo apt-get purge wiringpi
+  406  hash -r
+  407  sudo apt-get install git-core
+  408  apt-get update
+  409  sudo apt-get update
+  410  sudo apt-get upgrade
+  411  cd
+  412  sudo pip install WiringPi
+  413  cd wiringPi/
+  414  git clone WiringPi
+  415  ls
+  416  gpio readall
+  417  gpio
+  418  pinout
+  419  shutdown -r now
+  420  ip a
+  421  cd /var/www/html/Web v
+  422  ls
+  423  history | grep php
+  424  sftp
+  425  clear
+  426  gpio readall
+  427  gpio
+  428  sudo apt update -y && sudo apt install -y wiringpi
+  429  clear && gpio readall
+  430  gpio mode 7 out
+  431  gpio read 7
+  432  clear && gpio readall
+  433  gpio mode 7 out
+  434  gpio readall
+  435  gpio 
+  436  gpio readall
+  437  gpio write 7 1
+  438  gpio readall
+  439  gpio 
+  440  gpio write 7 0
+  441  gpio write 4 0
+  442  gpio write 7 1
+  443  gpio mode 7 out
+  444  gpio write 7 1
+  445  gpio readall
+  446  gpio mode 7 out
+  447  gpio readall
+  448  gpio mode 0 out
+  449  gpio readall
+  450  gpio write 7 1
+  451  shutdown -r now
+  452  sudo shutdown -r now
+  453  gpio readall
+  454  shutdown now
+  455  sudo shutdown now
+  456  gpio readall
+  457  gpio mode 3 out
+  458  gpio readall
+  459  gpio write 3 1
+  460  clear
+  461  history | grep "install"
+  462  sudo raspi-config 
+  463  clear && sudo apt autoremove -y php apache2 php5 libapache2-mod-php5 
+  464  clear
+  465  sudo apt update -y && sudo apt full-upgrade -y && sudo apt install -y lamp
+  466  ifconfig
+  467  sudo apt install lamp -y
+  468  history | grep systemctl
+  469  clear
+  470  sudo apt install -y apache2 php libapache2-mod-php mariadb-server php-cli  php-
+  471  sudo apt install -y apache2 libapache2-mod-php mariadb-server php7.3-cli  php7.3 && systemctl reload apache2 
+  472  clear
+  473  systemctl status phpsessionclean.service 
+  474  ls /var/www/html/
+  475  cd  /var/www/html/
+  476  gpio write 3 0
+  477  sudo shutdown now
+  478  history < commands.txt
+  479  history > commands.txt
