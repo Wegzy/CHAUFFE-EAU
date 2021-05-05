@@ -1,11 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.9
 #coding: utf-8
 
 """
     Librairie
 """
 
-import smbus
+from smbus2 import *
 import time
 
 """
@@ -28,18 +28,13 @@ SLAVE_ADDRESS = 0x51
 # DOC Page 11
 # ===============
 # CLKOUT_CONTROL_REGISTER : HZ
-# 
-# 
+#
+#
 # Doc Page 14
-# 
-# 
-# 
-# 
-
 
 
 CONTROL_1 = 0x00
-#CONTROL_2 = 0x01
+CONTROL_2 = 0x01
 CONTROL_3 = 0x02
 SECONDS   = 0x03
 MINUTES   = 0x04
@@ -58,4 +53,52 @@ WEEKDAY_ALARM = 0x0E
 CLKOUT_CONTROL_REGISTER = 0x0F
 WATCHDOG_TIME_CONTROL   = 0x10
 WATCHDOG_TIME_VAL       = 0x11
-TIMESTAMP REGISTER      = 0x12
+TIMESTAMP_REGISTER      = 0x12
+
+
+bus  = SMBus(1)
+#data = 0b00000000
+#data = [0b00000000, 0b00000000, 0b11100000]
+
+#data = [0x00, 0x00, 0xE0, 0x18]
+data = [0x00, 0x00, 0xE0, 0x00, 0x40, 0x10]
+
+
+
+
+##### CLOCK SPEED #####
+clkout32 =  0b11000000
+clkout1 = 0b11000110
+clkout1024 = 0b11000101
+#######################
+
+
+
+bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, data)
+bus.write_i2c_block_data(SLAVE_ADDRESS, YEARS, [0x20])
+#bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 3)
+
+
+while True: 
+	print(bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9))
+	time.sleep(60)
+
+
+
+#bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, data_1)
+
+#bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, 1)
+
+
+
+
+
+#bus.write_byte_data(SLAVE_ADDRESS,CLKOUT_CONTROL_REGISTER ,clkout32)
+
+
+
+
+
+
+
+
