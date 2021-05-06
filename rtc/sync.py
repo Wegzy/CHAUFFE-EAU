@@ -10,10 +10,11 @@ def check_sync():
     out = str(check_output("timedatectl | grep clock", shell=True), 'UTF-8')
     out = out[27:30]
     if out == "yes" :
-        print("L'horloge est synchronisé \n [...] test du réseaux pour vérifier que l'horloge est toujours synchronisé au réseau.\n")
         check_network()
+
     elif out == "no" : 
         print("L'horloge n'est pas synchronisé")
+
 def check_network():
     """ 
      Fonction "ping" 
@@ -21,11 +22,13 @@ def check_network():
     """
 
     ip = "8.8.8.8"
-    rep = check_output("ping -c 2 " + ip, shell=True)
+    rep = check_output("ping -c 2 " + ip + " > /dev/null", shell=True)
     if rep == 0:
-        print("Réseau OK, Horloge Synchronisé ")
+        pingstatus = "No network"
+        
     else: 
-        print ("Réseau indisponible, l'horloge peux possiblement être désynchronisé")
+        pingstatus = "Network OK"
+    return pingstatus 
 
 check_sync() 
 
