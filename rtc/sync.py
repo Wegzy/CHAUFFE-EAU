@@ -24,12 +24,11 @@ def check_network():
     ip = "8.8.8.8"
     rep = check_output("ping -c 2 " + ip + " > /dev/null", shell=True)
     if rep == 0:
-        pingstatus = "No network"
+        print("No Network")
         
     else: 
-        pingstatus = "Network OK"
-    return pingstatus 
-
+        print("Network OK")
+    
 check_sync() 
 
 
