@@ -1,13 +1,37 @@
-import subprocess
-
-# Récupère le retour de timedatectl 
-out = subprocess.check_output("timedatectl | grep clock", shell=True)
-# Convertion 'bytes' en 'str'
-out = str(out, 'UTF-8') 
+from subprocess import check_output
 
 
-print(out[27:31])
-#print(type(out))
+def check_sync():
+    """
+     La fonction récupère la valeur obtenu par "timedatectl", c'est une commande "linux"
+     Cette valeur est convertis au format string (puisqu'elle est au départ en bytes). 
+     Et enfin on récupère l'information : Yes / No pour pouvoir l'utiliser dans une condition.
+    """
+    out = str(check_output("timedatectl | grep clock", shell=True), 'UTF-8')
+    out = out[27:30]
+    if out == "yes" :
+        print("L'horloge est synchronisé \n [...] test du réseaux pour vérifier que l'horloge est toujours synchronisé au réseau.\n")
+        check_network()
+    elif out == "no" : 
+        print("L'horloge n'est pas synchronisé")
+def check_network():
+    """ 
+     Fonction "ping" 
+     Si la valeur retourné = 0, la connexion est fonctionnel, l'horloge sync
+    """
+
+    ip = "8.8.8.8"
+    rep = check_output("ping -c 2 " + ip, shell=True)
+    if rep == 0:
+        print("Réseau OK, Horloge Synchronisé ")
+    else: 
+        print ("Réseau indisponible, l'horloge peux possiblement être désynchronisé")
+
+check_sync() 
+
+
+
+
 
 
 
