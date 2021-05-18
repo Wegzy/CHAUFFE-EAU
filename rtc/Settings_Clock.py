@@ -47,6 +47,6 @@ while True:
     rtc_sec = hex(val[2])
     rtc_min = hex(val[3])
     rtc_hours = hex(val[4])
-    print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_hours,rtc_min,rtc_sec))
+    print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_hours[2:3],rtc_min,rtc_sec))
     time.sleep(1)
 
