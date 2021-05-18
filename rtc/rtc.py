@@ -46,7 +46,7 @@ TIMESTAMP_REGISTER      = 0x12
 bus  = SMBus(1)
 
 data = [0x00, 0x00, 0xE0, 0x00, 0x30, 0x11]
-       """ R1 , R2 , R3 , sec , h , min """
+######## R1 , R2 , R3    , sec , h , min ####
 
 """ CLOCK SPEED """
 clkout32 =  0b11000000
