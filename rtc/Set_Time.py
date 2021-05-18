@@ -26,7 +26,7 @@ def Set_time():
 
 
 def Set_time_RTC():
-    hex_form = str("0x")
+    hex_form = str("0x") # Variable à ajouter aux heures pour correspondre au format : 0xY (Y = H/Min/SEC)
     heures,minutes,secondes = Set_time()
     print("L'heure va être synchronisé sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
     
