@@ -65,14 +65,6 @@ while True:
 	print(bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9))
 	time.sleep(2)
 
-
-
-
-
-
-
-#bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, data_1)
-#bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, 1)
 #bus.write_byte_data(SLAVE_ADDRESS,CLKOUT_CONTROL_REGISTER ,clkout1024)
 
 
