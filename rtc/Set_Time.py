@@ -21,8 +21,8 @@ YEARS     = 0x09
 
 CONTROL_1 = 0x00
 
+Hex = "0x"
 
-bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [0x00,0x30,0x15])
 
 def Set_time():
     heures   = input("Heures : ")
@@ -36,6 +36,12 @@ def Set_time_RTC():
     heures,minutes,secondes = Set_time()
 
     print("L'heure va être synchronisé sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
+    heures = heures, 16
+    minutes = minutes, 16
+    secondes = secondes, 16
+
+    bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [heures,minutes,secondes])
+
 
 
 Set_time_RTC()
