@@ -30,10 +30,10 @@ def Set_time_RTC():
     heures,minutes,secondes = Set_time()
     print("L'heure va être synchronisé sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
     
-    heures = int("0x31",16)
-    heures = int(hex_form+heures,16)
-    minutes= int(minutes)
-    secondes= int(secondes)
+    #heures = int("0x31",16)
+    heures = int(hex_form+str(heures),16)
+    minutes= int(hex_form+str(minutes),16) 
+    secondes= int(hex_form+str(secondes),16)
     bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [heures,minutes,secondes])
 
 Set_time_RTC()
