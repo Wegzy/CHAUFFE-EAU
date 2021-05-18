@@ -45,7 +45,7 @@ TIMESTAMP_REGISTER      = 0x12
 
 bus  = SMBus(1)
 
-data = [0x00, 0x00, 0xE0, 0x00, 0x30, 0x11]
+data = [0x00, 0x02, 0xE0, 0x00, 0x30, 0x11]
 ######## R1 , R2 , R3    , sec , h , min ####
 
 """ CLOCK SPEED """
@@ -61,17 +61,18 @@ bus.write_i2c_block_data(SLAVE_ADDRESS, HOUR_ALARM, [0x11])
 bus.write_i2c_block_data(SLAVE_ADDRESS, DAY_ALARM, [0x80])
 bus.write_i2c_block_data(SLAVE_ADDRESS, WEEKDAY_ALARM, [0x80])
 
-
-
 while True: 
 	print(bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9))
 	time.sleep(2)
 
 
+
+
+
+
+
 #bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, data_1)
-
 #bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, 1)
-
 #bus.write_byte_data(SLAVE_ADDRESS,CLKOUT_CONTROL_REGISTER ,clkout1024)
 
 
