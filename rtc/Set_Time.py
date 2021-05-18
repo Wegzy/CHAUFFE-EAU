@@ -22,7 +22,7 @@ YEARS     = 0x09
 CONTROL_1 = 0x00
 
 def Set_time():
-    heures   = int(input("Heures : "))
+    heures   = hex(input("Heures : "))
     minutes  = int(input("Minutes : "))
     secondes = int(input("Secondes : "))
     return [heures,minutes,secondes]
