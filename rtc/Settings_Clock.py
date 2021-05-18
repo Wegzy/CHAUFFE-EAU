@@ -44,9 +44,9 @@ while True:
 	#print(bus.read_i2c_block_data(SLAVE_ADDRESS, SECONDS, 3))
     val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
     print(val[2:5]) # Récupère uniquement les secondes, min, sec
-    rtc_sec = val[2]
-    rtc_min = val[3]
-    rtc_hours = val[4]
+    hex(rtc_sec) = val[2]
+    hex(rtc_min) = val[3]
+    hex(rtc_hours) = val[4]
     print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_hours,rtc_min,rtc_sec))
     time.sleep(1)
 
