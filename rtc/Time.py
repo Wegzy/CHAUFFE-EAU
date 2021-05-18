@@ -6,7 +6,7 @@ def timenow_rpi ():
     heures = out[0:2]
     minutes = out[3:5]
     secondes = out[6:8]
-    print("Il est {0} heures, {1} minutes et {2} secondes".format(heures,minutes,secondes))
+    print("\nIl est {0} heures, {1} minutes et {2} secondes".format(heures,minutes,secondes))
 
 
 def datenow_rpi (): 
@@ -15,9 +15,7 @@ def datenow_rpi ():
     Mois = out[3:5]
     Année = out[6:8]
 
-    print("\nJour : {0}\nMois : {1} \nAnnée :{2}".format(Jour,Mois,Année))
+    print("\nJour : {0}\nMois : {1} \nAnnée :{2}\n\n".format(Jour,Mois,Année))
     
-while True:
-    timenow_rpi()
-    datenow_rpi()
-    time.sleep(1)
+timenow_rpi()
+datenow_rpi()
