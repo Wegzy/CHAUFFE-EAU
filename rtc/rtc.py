@@ -17,22 +17,6 @@ SLAVE_ADDRESS = 0x51
 """
     Adresse des registres
 """
-
-# CONTROL_1 permet de configurer des paramètres tel que : "External Clock test mode"
-#                                                         "RC source Clock runs"
-#                                                         "12/24 hours mode"
-# DOC Page 10
-# ===============
-# CONTROL_3 permet de configurer des paramètres concernant la batterie
-#
-# DOC Page 11
-# ===============
-# CLKOUT_CONTROL_REGISTER : HZ
-#
-#
-# Doc Page 14
-
-
 CONTROL_1 = 0x00
 CONTROL_2 = 0x01
 CONTROL_3 = 0x02
@@ -55,28 +39,28 @@ WATCHDOG_TIME_CONTROL   = 0x10
 WATCHDOG_TIME_VAL       = 0x11
 TIMESTAMP_REGISTER      = 0x12
 
+"""
+    Paramètres du bus
+"""
 
 bus  = SMBus(1)
-#data = 0b00000000
-#data = [0b00000000, 0b00000000, 0b11100000]
 
-#data = [0x00, 0x00, 0xE0, 0x18]
-data = [0x00, 0x00, 0xE0, 0x00, 0x40, 0x10]
+data = [0x00, 0x00, 0xE0, 0x00, 0x30, 0x11]
+       """ R1 , R2 , R3 , sec , h , min """
 
-
-
-
-##### CLOCK SPEED #####
+""" CLOCK SPEED """
 clkout32 =  0b11000000
 clkout1 = 0b11000110
 clkout1024 = 0b11000101
-#######################
-
-
+""" ########### """
 
 bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, data)
-bus.write_i2c_block_data(SLAVE_ADDRESS, YEARS, [0x20])
-#bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 3)
+bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [0x00])
+bus.write_i2c_block_data(SLAVE_ADDRESS, MINUTE_ALARM, [0x31])
+bus.write_i2c_block_data(SLAVE_ADDRESS, HOUR_ALARM, [0x11])
+bus.write_i2c_block_data(SLAVE_ADDRESS, DAY_ALARM, [0x80])
+bus.write_i2c_block_data(SLAVE_ADDRESS, WEEKDAY_ALARM, [0x80])
+
 
 
 while True: 
@@ -84,16 +68,11 @@ while True:
 	time.sleep(60)
 
 
-
 #bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, data_1)
 
 #bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, 1)
 
-
-
-
-
-#bus.write_byte_data(SLAVE_ADDRESS,CLKOUT_CONTROL_REGISTER ,clkout32)
+#bus.write_byte_data(SLAVE_ADDRESS,CLKOUT_CONTROL_REGISTER ,clkout1024)
 
 
 
