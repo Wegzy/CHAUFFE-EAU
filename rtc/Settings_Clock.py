@@ -39,5 +39,5 @@ def Set_time_RTC():
 Set_time_RTC()
 
 while True: 
-	print(bus.read_i2c_block_data(SLAVE_ADDRESS, SECONDS))
+	print(bus.read_i2c_block_data(SLAVE_ADDRESS, SECONDS, 3))
 	time.sleep(2)
