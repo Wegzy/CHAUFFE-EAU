@@ -19,6 +19,8 @@ WEEKDAYS  = 0x07
 MONTHS    = 0x08
 YEARS     = 0x09
 
+CONTROL_1 = 0x00
+
 
 bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [0x00,0x30,0x15])
 
@@ -39,5 +41,7 @@ def Set_time_RTC():
 Set_time_RTC()
 
 while True: 
-	print(bus.read_i2c_block_data(SLAVE_ADDRESS, SECONDS, 3))
+	#print(bus.read_i2c_block_data(SLAVE_ADDRESS, SECONDS, 3))
+    print(bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9))
 	time.sleep(2)
+
