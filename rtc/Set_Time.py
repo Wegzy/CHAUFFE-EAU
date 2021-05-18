@@ -36,15 +36,23 @@ def Set_time_RTC():
     secondes= int(hex_form+str(secondes),16)
     bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [heures,minutes,secondes])
 
-Set_time_RTC()
-
-while True: 
-	#print(bus.read_i2c_block_data(SLAVE_ADDRESS, SECONDS, 3))
     val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
     print(val[2:5]) # Récupère uniquement les secondes, min, sec
     rtc_sec = hex(val[2])
     rtc_min = hex(val[3])
     rtc_hours = hex(val[4])
     print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_sec[2:4],rtc_min[2:4],rtc_hours[2:4]))
-    time.sleep(1)
+
+
+Set_time_RTC()
+
+#while True: 
+	#print(bus.read_i2c_block_data(SLAVE_ADDRESS, SECONDS, 3))
+    #val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
+    #print(val[2:5]) # Récupère uniquement les secondes, min, sec
+    #rtc_sec = hex(val[2])
+    #rtc_min = hex(val[3])
+    #rtc_hours = hex(val[4])
+    #print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_sec[2:4],rtc_min[2:4],rtc_hours[2:4]))
+    #time.sleep(1)
 
