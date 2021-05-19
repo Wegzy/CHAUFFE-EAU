@@ -26,7 +26,7 @@ HOUR_ALARM    = 0x0C
 DAY_ALARM     = 0x0D
 WEEKDAY_ALARM = 0x0E
 
-bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, [0x00])
+bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, [0x02])
 
 
 def Set_time():
