@@ -18,6 +18,12 @@ MONTHS    = 0x08
 YEARS     = 0x09
 CONTROL_1 = 0x00
 
+SECOND_ALARM  = 0x0A
+MINUTE_ALARM  = 0x0B
+HOUR_ALARM    = 0x0C
+DAY_ALARM     = 0x0D
+WEEKDAY_ALARM = 0x0E
+
 def Set_time():
     heures   = input("Heures : ")
     minutes  = input("Minutes : ")
@@ -29,7 +35,11 @@ def Set_time_RTC():
     hex_form = str("0x") # Variable à ajouter aux heures pour correspondre au format : 0xY (Y = H/Min/SEC)
     heures,minutes,secondes = Set_time()
     print("L'heure va être synchronisé sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
+    
     secondes_alarm = int(secondes)+1
+    disabled_DAY_WEEKDAY = [0x80,0x80]
+    
+
     heures = int(hex_form+str(heures),16)
     minutes= int(hex_form+str(minutes),16) 
     secondes= int(hex_form+str(secondes),16)
@@ -42,7 +52,7 @@ def Set_time_RTC():
     print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_hours[2:4],rtc_min[2:4],rtc_sec[2:4]))
     #print(alarm_rtc) Vérifier l'incrémentation de l'heure
     
-    bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [heures,minutes,secondes_alarm])
+    bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [secondes_alarm,minutes,heures,disabled_DAY_WEEKDAY])
 
 
 

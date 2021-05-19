@@ -36,15 +36,3 @@ if res_ping == True:
 elif res_ping == False:
     print("L'horloge n'est plus synchronisé à internet")
 
-
-
-
-
-
-#    rep = check_output("ping -c 1 " + ip, shell=True)
-#if rep == 0:
-    #    print("No Network")
-        
-    #else: 
-    #    print("Network OK")
-    #
