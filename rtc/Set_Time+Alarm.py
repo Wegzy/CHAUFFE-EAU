@@ -41,7 +41,7 @@ def Set_time_RTC():
     rtc_min = hex(val[3])
     rtc_hours = hex(val[4])
     print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_sec[2:4],rtc_min[2:4],rtc_hours[2:4]))
-    alarm_rtc = int(secondes+1 ,16)
+    alarm_rtc = int(secondes+1)
     print(alarm_rtc)    
 
 
