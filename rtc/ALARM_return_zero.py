@@ -35,8 +35,6 @@ WEEKDAY_ALARM = 0x0E
 
 bus  = SMBus(1)
 
-
-
 data = [0x00, 0x02, 0xE0, 0x00, 0x00, 0x00]
 ######## R1 ,  R2 ,  R3 , sec ,  h  , min ####
 

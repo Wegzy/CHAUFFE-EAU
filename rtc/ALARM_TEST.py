@@ -63,5 +63,5 @@ bus.write_i2c_block_data(SLAVE_ADDRESS, WEEKDAY_ALARM, [0x80])
 
 while True: 
 	print(bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9))
-	time.sleep(2)
+	time.sleep(10)
 
