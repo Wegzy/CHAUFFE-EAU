@@ -40,7 +40,7 @@ def Set_time_RTC():
     heures,minutes,secondes = Set_time()
     print("L'heure va être synchronisé sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
     
-    secondes_alarm = int(secondes)+1
+    secondes_alarm = int(secondes)+2
     print("DEBUG : Incrém. Alarm : {0}".format(secondes_alarm))
     heures = int(hex_form+str(heures),16)
     minutes= int(hex_form+str(minutes),16) 
@@ -54,10 +54,9 @@ def Set_time_RTC():
     rtc_hours = hex(val[4])
     print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_hours[2:4],rtc_min[2:4],rtc_sec[2:4]))
     #print(secondes_alarm) Vérifier l'incrémentation de l'heure
-    secondes_alarm = 0b0000010
     bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [secondes_alarm, minutes, heures, 0x80, 0x80])
     
-    time.sleep(3)
+    time.sleep(4)
     bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, [0x00])
 
 
