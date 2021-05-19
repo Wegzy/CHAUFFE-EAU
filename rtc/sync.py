@@ -23,7 +23,7 @@ def check_network():
     ip = "8.8.8.8"
 
     try:
-        check_output("ping -c 3 " + ip, shell=True)
+        check_output("ping -c 1 " + ip, shell=True)
         return True
     except CalledProcessError: 
         return False
@@ -32,9 +32,9 @@ def check_network():
 res_ping = check_network() 
 
 if res_ping == True: 
-    print("Synchro 100%")
+    print("L'horloge est synchronisé")
 elif res_ping == False:
-    print("Cuicuicui")
+    print("L'horloge n'est plus synchronisé à internet")
 
 
 
