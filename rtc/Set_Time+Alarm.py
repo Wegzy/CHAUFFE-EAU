@@ -56,12 +56,12 @@ def Set_time_RTC():
     #print(secondes_alarm) Vérifier l'incrémentation de l'heure
     
 
-    bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [secondes_alarm, minutes, heures, 0x80, 0x80])
-    #bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [secondes_alarm])
-    #bus.write_i2c_block_data(SLAVE_ADDRESS, MINUTE_ALARM, [minutes])
-    #bus.write_i2c_block_data(SLAVE_ADDRESS, HOUR_ALARM, [heures])
-    #bus.write_i2c_block_data(SLAVE_ADDRESS, DAY_ALARM, [0x80])
-    #bus.write_i2c_block_data(SLAVE_ADDRESS, WEEKDAY_ALARM, [0x80])
+    #bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [secondes_alarm, minutes, heures, 0x80, 0x80])
+    bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [secondes_alarm])
+    bus.write_i2c_block_data(SLAVE_ADDRESS, MINUTE_ALARM, [minutes])
+    bus.write_i2c_block_data(SLAVE_ADDRESS, HOUR_ALARM, [heures])
+    bus.write_i2c_block_data(SLAVE_ADDRESS, DAY_ALARM, [0x80])
+    bus.write_i2c_block_data(SLAVE_ADDRESS, WEEKDAY_ALARM, [0x80])
 
 
     time.sleep(4)
