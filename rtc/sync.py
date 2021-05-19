@@ -1,5 +1,4 @@
-from subprocess import check_output
-
+from subprocess import check_output,CalledProcessError
 
 def check_sync():
     """
@@ -22,18 +21,30 @@ def check_network():
     """
 
     ip = "8.8.8.8"
-    rep = check_output("ping -c 2 " + ip + " > /dev/null", shell=True)
-    if rep == 0:
-        print("No Network")
-        
-    else: 
-        print("Network OK")
+
+    try:
+        check_output("ping -c 3 " + ip, shell=True)
+        return True
+    except CalledProcessError: 
+        return False
     
-check_sync() 
+
+res_ping = check_network() 
+
+if res_ping == True: 
+    print("Synchro 100%")
+elif res_ping == False:
+    print("Cuicuicui")
 
 
 
 
 
 
-
+#    rep = check_output("ping -c 1 " + ip, shell=True)
+#if rep == 0:
+    #    print("No Network")
+        
+    #else: 
+    #    print("Network OK")
+    #
