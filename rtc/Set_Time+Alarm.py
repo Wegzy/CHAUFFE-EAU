@@ -48,7 +48,7 @@ def Set_time_RTC():
 
     bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
     val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
-    print(val[2:5]) # Récupère uniquement les secondes, min, sec
+    #print(val[2:5]) # Récupère uniquement les secondes, min, sec
     rtc_sec = hex(val[2]) # Passage en hexa de la valeur
     rtc_min = hex(val[3])
     rtc_hours = hex(val[4])
@@ -56,7 +56,7 @@ def Set_time_RTC():
     #print(secondes_alarm) Vérifier l'incrémentation de l'heure
     
 
-    bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [secondes_alarm,minutes,heures,0x80,0x80])
+    bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [secondes_alarm, minutes, heures, 0x80, 0x80])
     #bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [secondes_alarm])
     #bus.write_i2c_block_data(SLAVE_ADDRESS, MINUTE_ALARM, [minutes])
     #bus.write_i2c_block_data(SLAVE_ADDRESS, HOUR_ALARM, [heures])
