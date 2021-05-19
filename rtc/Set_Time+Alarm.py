@@ -67,9 +67,7 @@ def Set_time_RTC():
     bus.write_i2c_block_data(SLAVE_ADDRESS, DAY_ALARM, [0x80])
     bus.write_i2c_block_data(SLAVE_ADDRESS, WEEKDAY_ALARM, [0x80])
 
-
-
-    time.sleep(3)
+    time.sleep(5)
     bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, [0x00])
 
 
