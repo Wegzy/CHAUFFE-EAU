@@ -30,7 +30,6 @@ def Set_time_RTC():
     heures,minutes,secondes = Set_time()
     print("L'heure va être synchronisé sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
     
-    #heures = int("0x31",16)
     heures = int(hex_form+str(heures),16)
     minutes= int(hex_form+str(minutes),16) 
     secondes= int(hex_form+str(secondes),16)
@@ -44,8 +43,7 @@ def Set_time_RTC():
     rtc_min = hex(val[3])
     rtc_hours = hex(val[4])
     print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_sec[2:4],rtc_min[2:4],rtc_hours[2:4]))
-    print((int(rtc_sec+1))
-
+    print(int(rtc_sec+1))
 
 
 Set_time_RTC()
