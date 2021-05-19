@@ -52,7 +52,7 @@ def Set_time_RTC():
     print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_hours[2:4],rtc_min[2:4],rtc_sec[2:4]))
     #print(alarm_rtc) Vérifier l'incrémentation de l'heure
     
-    bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [secondes_alarm,minutes,heures,disabled_DAY_WEEKDAY])
+    bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [secondes_alarm,minutes,heures,0x80,0x80])
 
 
 
