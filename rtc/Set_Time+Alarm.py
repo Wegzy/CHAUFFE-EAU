@@ -44,6 +44,7 @@ def Set_time_RTC():
     heures = int(hex_form+str(heures),16)
     minutes= int(hex_form+str(minutes),16) 
     secondes= int(hex_form+str(secondes),16)
+    print(secondes)
 
     bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, [0x02])
     bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
