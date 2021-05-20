@@ -6,6 +6,7 @@ import time
 
 SLAVE_ADDRESS = 0x51
 bus  = SMBus(1)
+
 """
     Adresse des registres
 """
@@ -18,7 +19,6 @@ MONTHS    = 0x08
 YEARS     = 0x09
 CONTROL_1 = 0x00
 CONTROL_2 = 0x01
-
 
 SECOND_ALARM  = 0x0A
 MINUTE_ALARM  = 0x0B
@@ -35,11 +35,10 @@ def Set_time_RTC():
     print("L'heure va être synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
     
     secondes_alarm = int(secondes)+2    
-    print(secondes_alarm)
-    secondes_alarm = hex(int(secondes_alarm,16))
+    secondes_alarm = hex(int(secondes_alarm))
     secondes = hex(int(secondes,16))
-    minutes  = hex(int(minutes,16))
-    heures   = hex(int(heures,16))
+    minutes  = hex(int(minutes ,16))
+    heures   = hex(int(heures  ,16))
     
 
     print("L'heure va être reellement synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
