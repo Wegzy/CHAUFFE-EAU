@@ -34,9 +34,9 @@ def Set_time_RTC():
 
     print("L'heure va être synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
         
-    secondes_alarm = int(secondes)+2
+    secondes_alarm = int(secondes)
+    secondes_alarm = secondes_alarm+2
     secondes_alarm = str(secondes_alarm)
-    secondes_alarm = hex(int(secondes_alarm))
       
     secondes = hex(int(secondes,16))
     minutes  = hex(int(minutes ,16))
