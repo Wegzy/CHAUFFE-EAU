@@ -38,13 +38,15 @@ def Set_time():
 def Set_time_RTC():
     hex_form = str("0x") # Variable à ajouter aux heures pour correspondre au format : 0xY (Y = H/Min/SEC)
     heures,minutes,secondes = Set_time()
-    print("L'heure va être synchronisé sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
+    print("L'heure va être synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
     
     secondes_alarm = int(secondes)+2
     heures = int(hex_form+str(heures),16)
     minutes= int(hex_form+str(minutes),16) 
     secondes= int(hex_form+str(secondes),16)
     print(secondes)
+
+    print("L'heure va être reellement synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
 
     bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, [0x02])
     bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
