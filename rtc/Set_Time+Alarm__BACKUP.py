@@ -47,7 +47,7 @@ def Set_time_RTC():
     print(secondes)
     secondes_alarm = int(secondes)+2
 
-    print("L'heure va être reellement synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
+    print("L'heure va être réellement synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
 
     bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, [0x02])
     bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
