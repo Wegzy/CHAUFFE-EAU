@@ -39,20 +39,19 @@ def Set_time_RTC():
     minutes  = int(minutes)
     heures   = int(heures)
     secondes_alarm = secondes+2
-    
-    
+       
 
     print("L'heure va être reellement synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
 
 
     bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, [0x02])
     bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
-
+    
     val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
     print(val[2:5]) # Récupère uniquement les secondes, min, sec
-    rtc_sec = hex(val[2]) # Passage en hexa de la valeur
-    rtc_min = hex(val[3])
-    rtc_hours = hex(val[4])
+    rtc_sec = val[2]
+    rtc_min = val[3]
+    rtc_hours = val[4]
     print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_hours[2:4],rtc_min[2:4],rtc_sec[2:4]))
 
     print(secondes_alarm) # Vérifier l'incrémentation de l'heure
