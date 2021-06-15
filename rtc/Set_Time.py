@@ -33,7 +33,7 @@ def Set_time_RTC():
     bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
     
     val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
-    print(val[2:5]) # Récupère uniquement les secondes, min, sec
+    #print(val[2:5]) # Récupère uniquement les secondes, min, sec
     rtc_sec = str(val[2])
     rtc_min = str(val[3])
     rtc_hours = str(val[4])
