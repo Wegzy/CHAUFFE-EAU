@@ -7,7 +7,9 @@ def check_sync():
      Et enfin on récupère l'information : Yes / No pour pouvoir l'utiliser dans une condition.
     """
     out = str(check_output("timedatectl | grep clock", shell=True), 'UTF-8')
+    print(out)
     out = out[27:30]
+    print(out)
     if out == "yes" :
         check_network()
  
