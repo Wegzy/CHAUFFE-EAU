@@ -12,7 +12,7 @@ def check_sync():
         check_network()
 
     elif out == "no" : 
-        print("L'horloge n'est pas synchronisé")
+        print("\n\n\nL'horloge n'est pas synchronisé\n\n\n")
 
 def check_network():
     """ 
@@ -32,7 +32,7 @@ def check_network():
 res_ping = check_network() 
 
 if res_ping == True: 
-    print("L'horloge est synchronisé")
+    print("\n\n\nL'horloge est synchronisé\n\n\n")
 elif res_ping == False:
-    print("L'horloge n'est plus synchronisé à internet")
+    print("\n\n\nL'horloge n'est plus synchronisé à internet\n\n\n")
 

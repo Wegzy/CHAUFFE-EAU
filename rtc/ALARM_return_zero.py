@@ -49,7 +49,5 @@ time.sleep(10)
 bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_2, [0x00])
 
 
-#while True: 
-#	print(bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9))
-#	time.sleep(2)
+
 
