@@ -12,7 +12,7 @@ def check_sync():
         check_network()
  
     elif out == "no " : 
-        print("\n\n\n Statut 3 : L'horloge n'est pas synchronisé\n\n\n")
+        print("\n\n\n Statut 3 : L'horloge n'est plus du tout synchronisé\n\n\n")
 
 def check_network():
     """ 
