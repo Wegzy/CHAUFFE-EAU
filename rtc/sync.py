@@ -29,7 +29,8 @@ def check_network():
         return True
     except CalledProcessError: 
         return False
-    
+
+check_sync()    
 res_ping = check_network() 
 
 if res_ping == True: 
