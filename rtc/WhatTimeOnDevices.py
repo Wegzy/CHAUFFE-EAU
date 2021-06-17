@@ -39,8 +39,11 @@ def timenow_RTC():
         print("\n ----> Impossible de communiquer avec la RTC ! \n Vérifier son branchement !  \n ")
         
 try: 
-    int(secondes_rpi), int(minutes_rpi), int(heures_rpi) = timenow_rpi()
-    int(secondes_RTC), int(minutes_RTC), int(heures_RTC) = timenow_RTC()
+    secondes_rpi, minutes_rpi, heures_rpi = timenow_rpi()
+    secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
+
+    int(secondes_rpi, minutes_rpi, heures_rpi)
+    int(secondes_RTC, minutes_RTC, heures_RTC)
 
     print(minutes_RTC, minutes_rpi, heures_RTC, heures_rpi)
 
