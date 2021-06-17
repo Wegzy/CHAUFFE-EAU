@@ -46,16 +46,23 @@ try:
     secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
 
     print(minutes_RTC, minutes_rpi, heures_RTC, heures_rpi)
-
-    #heures_RTC  = heures_rpi
-    #minutes_RTC = minutes_rpi
-
-    if heures_RTC==heures_rpi and minutes_RTC==minutes_rpi: 
+"""
+    DEBUG
+    heures_RTC  = heures_rpi
+    minutes_RTC = minutes_rpi
+    Fin du DEBUG
+"""
+    if int(heures_RTC)==int(heures_rpi) and int(minutes_RTC)==int(minutes_rpi): 
         print("L'horloge RTC et la Raspberry sont synchronisés ! ")
 
     else:
 
         print("Les deux horloges ne sont pas synchronisés ! ")
+
+        #if heures_RTC < heures_rpi and heure
+
+
+        #bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
 
 except:
 
