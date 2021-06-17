@@ -50,14 +50,17 @@ def check_sync():
             check_output("ping -c 2 " + ip, shell=True)
             print("\n\n Statut 0 : L'horloge est synchronisé \n\n\n")
             statut = 0
+            return statut
     
         except CalledProcessError: 
             print("\n\n Statut 1 : L'horloge n'est plus synchronisé à internet \n\n\n")
             statut = 1
+            return statut
             
     else:
         print("\n\n Statut 2 : L'horloge n'est plus du tout synchronisé \n\n\n")
         statut = 2
+        return statut
 
 try: 
     secondes_rpi, minutes_rpi, heures_rpi = timenow_rpi()
@@ -67,12 +70,17 @@ try:
         print("L'horloge RTC et la Raspberry sont synchronisés ! ")
 
     else:
-        print("Les deux horloges ne sont pas synchronisés ! ")
-        print("Test de la synchronisation :")
-        check_sync() 
-
-
-
+        print("Les deux horloges ne sont pas synchronisés ! \n\n\n\n\n ")
+        print("Vérification du statut de synchronisation de la Raspberry  :")
+        try: 
+            statut = check_sync() 
+            if statut == 2:
+                print("Synchronisation de la RTC en cours ...")
+                
+            
 except:
 
     print("L'heure n'a pas pu être comparé ")
+
+
+
