@@ -1,5 +1,5 @@
 from subprocess import check_output
-from smbus2 import read_i2c_block_data,write_i2c_block_data
+from smbus2 import *
 import time
 
 def timenow_rpi ():
