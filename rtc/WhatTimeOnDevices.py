@@ -2,13 +2,23 @@ from subprocess import check_output
 from smbus2 import *
 import time
 
-def timenow_rpi():
-    out = str(check_output("date +%X", shell=True), 'UTF-8')
-    heures_rpi = out[0:2]
-    minutes_rpi = out[3:5]
-    secondes_rpi = out[6:8]
-    print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la Raspberry".format(heures_rpi,minutes_rpi,secondes_rpi))
-    return heures_rpi, minutes_rpi, secondes_rpi
+global Heure_Recuperee_RPI = None 
+global Heure_Recuperee_RTC = None
+def timenow_rpi():    
+    try:
+        out = str(check_output("date +%X", shell=True), 'UTF-8')
+        heures_rpi = out[0:2]
+        minutes_rpi = out[3:5]
+        secondes_rpi = out[6:8]
+        print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la Raspberry".format(heures_rpi,minutes_rpi,secondes_rpi))
+        Heure_Recuperee_RPI = 0
+        return heures_rpi, minutes_rpi, secondes_rpi, Heure_Recuperee_RPI
+        
+    except: 
+        print(" Impossible de récupérer l'heure de la Raspberry ! ")
+        Heure_Recuperee_RPI = 1
+        return Heure_Recuperee_RPI
+
 def timenow_RTC():
     SLAVE_ADDRESS = 0x51
     bus  = SMBus(1)
@@ -29,14 +39,25 @@ def timenow_RTC():
 
         secondes_RTC = hex(secondes_RTC)
         secondes_RTC = secondes_RTC[2:4]
-    
-        print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la RTC \n".format(heures_RTC,minutes_RTC,secondes_RTC))
-        return secondes_RTC,minutes_RTC,heures_RTC
-    except: 
-        print("\n ----> L'horloge semble disfonctionner ! \n \n ")
         
+        print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la RTC \n".format(heures_RTC,minutes_RTC,secondes_RTC))
+        Heure_Recuperee_RTC = 0
+        return secondes_RTC,minutes_RTC,heures_RTC,Heure_Recuperee_RTC
+        
+    except: 
+        print("\n ----> L'horloge semble disfonctionner ! \n Vérifier le branchement de l'horloge ! \n ")
+        Heure_Recuperee_RTC = 1 
+        return Heure_Recuperee_RTC
+
+
 
 timenow_rpi()
 timenow_RTC()
 
+try: 
+    secondes_rpi, minutes_rpi, heures_rpi, Heure_Recuperee_RPI = timenow_rpi()
+    secondes_RTC, minutes_RTC, heures_RTC, Heure_Recuperee_RTC = timenow_RTC()
 
+except:
+
+    print("Doesn't Work ! ")
