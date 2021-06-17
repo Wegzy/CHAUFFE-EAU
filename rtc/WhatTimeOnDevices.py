@@ -1,4 +1,4 @@
-from subprocess import check_output
+from subprocess import check_output,CalledProcessError
 from smbus2 import *
 import time
 
@@ -14,8 +14,7 @@ def timenow_rpi():
         return secondes_rpi, minutes_rpi, heures_rpi
         
     except: 
-        print(" Impossible de récupérer l'heure de la Raspberry ! ")
-        
+        print(" Impossible de récupérer l'heure de la Raspberry ! ")       
 def timenow_RTC():
     SLAVE_ADDRESS = 0x51
     bus  = SMBus(1)
@@ -37,36 +36,42 @@ def timenow_RTC():
         
     except: 
         print("\n ----> Impossible de communiquer avec la RTC ! \n Vérifier son branchement !  \n ")
-        
+def check_sync():
+
+    out = str(check_output("timedatectl | grep clock", shell=True), 'UTF-8')
+    out = out[27:30]
+    
+    statut = None
+    
+
+    if out == "yes":
+        ip = "1.debian.pool.ntp.org"
+        try:
+            check_output("ping -c 2 " + ip, shell=True)
+            print("\n\n Statut 0 : L'horloge est synchronisé \n\n\n")
+            statut = 0
+    
+        except CalledProcessError: 
+            print("\n\n Statut 1 : L'horloge n'est plus synchronisé à internet \n\n\n")
+            statut = 1
+            
+    else:
+        print("\n\n Statut 2 : L'horloge n'est plus du tout synchronisé \n\n\n")
+        statut = 2
+
 try: 
     secondes_rpi, minutes_rpi, heures_rpi = timenow_rpi()
     secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
-
-    print(minutes_RTC, minutes_rpi, heures_RTC, heures_rpi)
 
     if int(heures_RTC)==int(heures_rpi) and int(minutes_RTC)==int(minutes_rpi): 
         print("L'horloge RTC et la Raspberry sont synchronisés ! ")
 
     else:
-
         print("Les deux horloges ne sont pas synchronisés ! ")
-
-        if int(heures_RTC) < heures_rpi and minutes_RTC < minutes_rpi:
-            print("Done") 
-        elif int(heures_RTC) < heures_rpi and minutes_RTC > minutes_rpi:
-            print("Done") 
-        elif int(heures_RTC) > heures_rpi and minutes_RTC > minutes_rpi:
-            print("Done") 
-        elif int(heures_RTC) > heures_rpi and minutes_RTC < minutes_rpi:
-            print("Done") 
-        elif int(heures_RTC) == heures_rpi and minutes_RTC > minutes_rpi:
-            print("Done") 
-        elif int(heures_RTC) == heures_rpi and minutes_RTC < minutes_rpi:
-            print("Done") 
+        print("Test de la synchronisation :")
+        check_sync() 
 
 
-
-        #bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
 
 except:
 
