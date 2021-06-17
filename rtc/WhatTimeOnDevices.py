@@ -51,13 +51,13 @@ try:
 
         print("Les deux horloges ne sont pas synchronisés ! ")
 
-        if int(heures_RTC) < heures_rpi and heures_RTC < heures_RTC:
+        if int(heures_RTC) < heures_rpi and minutes_RTC < minutes_rpi:
             print("Done") 
-        elif int(heures_RTC) < heures_rpi and heures_RTC > heures_RTC:
+        elif int(heures_RTC) < heures_rpi and minutes_RTC > minutes_rpi:
             print("Done") 
-        elif int(heures_RTC) > heures_rpi and heures_RTC > heures_RTC:
+        elif int(heures_RTC) > heures_rpi and minutes_RTC > minutes_rpi:
             print("Done") 
-        elif int(heures_RTC) > heures_rpi and heures_RTC < heures_RTC:
+        elif int(heures_RTC) > heures_rpi and minutes_RTC < minutes_rpi:
             print("Done") 
         
 
