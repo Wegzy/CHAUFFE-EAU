@@ -46,14 +46,12 @@ def timenow_RTC():
         return secondes_RTC,minutes_RTC,heures_RTC,Heure_Recuperee_RTC
         
     except: 
-        print("\n ----> L'horloge semble disfonctionner ! \n Vérifier le branchement de l'horloge ! \n ")
+        print("\n ----> L'horloge semble disfonctionner ! \n      Vérifier le branchement de l'horloge ! \n ")
         Heure_Recuperee_RTC = 1 
         return Heure_Recuperee_RTC
 
-
-
-timenow_rpi()
-timenow_RTC()
+#timenow_rpi()
+#timenow_RTC()
 
 try: 
     secondes_rpi, minutes_rpi, heures_rpi, Heure_Recuperee_RPI = timenow_rpi()
@@ -61,4 +59,4 @@ try:
 
 except:
 
-    print("Doesn't Work ! ")
+    print("Impossible de comparer les heures entre la Raspberry et la RTC")
