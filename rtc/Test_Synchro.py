@@ -30,15 +30,18 @@ def check_network():
 
     try:
         check_output("ping -c 1 " + ip, shell=True)
-        return True
+        print("\n\n\n Statut 1 : L'horloge est synchronisé \n\n\n")
+        
     except CalledProcessError: 
-        return False
+        print("\n\n\n Statut 2 : L'horloge n'est plus synchronisé à internet \n\n\n")
+        
 
 check_sync()    
+"""
 res_ping = check_network() 
 
 if res_ping == True: 
     print("\n\n\n Statut 1 : L'horloge est synchronisé \n\n\n")
 elif res_ping == False:
-    print("\n\n\n Statut 2 : L'horloge n'est plus synchronisé à internet \n\n\n")
+    print("\n\n\n Statut 2 : L'horloge n'est plus synchronisé à internet \n\n\n")"""
 
