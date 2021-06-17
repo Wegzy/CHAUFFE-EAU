@@ -11,7 +11,7 @@ def timenow_rpi():
         secondes_rpi = out[6:8]
         print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la Raspberry".format(heures_rpi,minutes_rpi,secondes_rpi))
         
-        return heures_rpi, minutes_rpi, secondes_rpi
+        return secondes_rpi, minutes_rpi, heures_rpi
         
     except: 
         print(" Impossible de récupérer l'heure de la Raspberry ! ")
