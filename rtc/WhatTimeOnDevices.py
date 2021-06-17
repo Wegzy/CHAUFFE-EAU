@@ -61,9 +61,5 @@ except:
         if Heure_Recuperee_RPI == 1 and Heure_Recuperee_RTC == 0:
             print("Impossible de comparer les heures entre la Raspberry et la RTC !! ")
             
-
-
-
-
-
-
+        except: 
+            print("Error !!!")
