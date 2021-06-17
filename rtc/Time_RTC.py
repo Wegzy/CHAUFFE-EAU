@@ -1,8 +1,8 @@
 #!/usr/bin/python3.9
 #coding: utf-8
 
-from smbus2 import *
 import time
+from smbus2 import read_i2c_block_data
 
 SLAVE_ADDRESS = 0x51
 bus  = SMBus(1)

@@ -40,5 +40,3 @@ def Set_time_RTC():
     print("Il est {0} heures, {1} minutes et {2} secondes".format(rtc_hours,rtc_min,rtc_sec))
 
 Set_time_RTC()
-
-
