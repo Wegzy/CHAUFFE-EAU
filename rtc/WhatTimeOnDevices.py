@@ -21,9 +21,9 @@ def timenow_RTC():
     heures_RTC   = str(TimeOnRTC[4])    
     
     
-    secondes_RTC = hex(secondes_RTC)
-    minutes_RTC  = hex(minutes_RTC)
-    heures_RTC   = hex(heures_RTC)
+    secondes_RTC = int(hex(secondes_RTC),16)
+    minutes_RTC  = int(hex(minutes_RTC),16)
+    heures_RTC   = int(hex(heures_RTC),16)
     print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la RTC \n".format(heures_RTC,minutes_RTC,secondes_RTC))
 
 timenow_rpi()
