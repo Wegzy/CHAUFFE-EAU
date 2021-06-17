@@ -47,6 +47,8 @@ try:
 
     print(minutes_RTC, minutes_rpi, heures_RTC, heures_rpi)
 
+    heures_RTC  = heures_rpi
+    minutes_RTC = minutes_rpi
 
     if (heures_rpi==heures_RTC) and (minutes_rpi==minutes_RTC): 
         print("L'horloge RTC et la Raspberry sont synchronisés ! ")
