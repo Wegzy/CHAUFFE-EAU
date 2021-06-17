@@ -46,12 +46,11 @@ try:
     secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
 
     print(minutes_RTC, minutes_rpi, heures_RTC, heures_rpi)
-"""
-    DEBUG
-    heures_RTC  = heures_rpi
-    minutes_RTC = minutes_rpi
-    Fin du DEBUG
-"""
+
+
+#    heures_RTC  = heures_rpi
+#    minutes_RTC = minutes_rpi
+
     if int(heures_RTC)==int(heures_rpi) and int(minutes_RTC)==int(minutes_rpi): 
         print("L'horloge RTC et la Raspberry sont synchronisés ! ")
 
