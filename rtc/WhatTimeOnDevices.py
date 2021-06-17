@@ -22,9 +22,6 @@ def timenow_RTC():
     CONTROL_1 = 0x00
     try:        
         TimeOnRTC = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
-        #print(val[2:5]) # Récupère uniquement les secondes, min, sec
-        #print(type(TimeOnRTC))
-        #print(TimeOnRTC)
 
         secondes_RTC = str(TimeOnRTC[2])
         minutes_RTC  = str(TimeOnRTC[3])
@@ -42,23 +39,20 @@ def timenow_RTC():
         print("\n ----> Impossible de communiquer avec la RTC ! \n Vérifier son branchement !  \n ")
         
 try: 
-    secondes_rpi, minutes_rpi, heures_rpi = timenow_rpi()
-    secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
+    int(secondes_rpi), int(minutes_rpi), int(heures_rpi) = timenow_rpi()
+    int(secondes_RTC), int(minutes_RTC), int(heures_RTC) = timenow_RTC()
 
     print(minutes_RTC, minutes_rpi, heures_RTC, heures_rpi)
 
-
-#    heures_RTC  = heures_rpi
-#    minutes_RTC = minutes_rpi
-
-    if int(heures_RTC)==int(heures_rpi) and int(minutes_RTC)==int(minutes_rpi): 
+    if heures_RTC==heures_rpi and minutes_RTC==minutes_rpi: 
         print("L'horloge RTC et la Raspberry sont synchronisés ! ")
 
     else:
 
         print("Les deux horloges ne sont pas synchronisés ! ")
 
-        #if heures_RTC < heures_rpi and heure
+        #if int(heures_RTC) < heures_rpi and heures_RTC < heures_RTC:
+
 
 
         #bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
