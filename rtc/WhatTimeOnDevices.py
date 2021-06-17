@@ -13,23 +13,30 @@ def timenow_RTC():
     SLAVE_ADDRESS = 0x51
     bus  = SMBus(1)
     CONTROL_1 = 0x00
-    TimeOnRTC = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
-    #print(val[2:5]) # Récupère uniquement les secondes, min, sec
-    print(type(TimeOnRTC))
-    print(TimeOnRTC)
+    try:
+        TimeOnRTC = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
+        #print(val[2:5]) # Récupère uniquement les secondes, min, sec
+        #print(type(TimeOnRTC))
+        #print(TimeOnRTC)
 
-    secondes_RTC = str(TimeOnRTC[2])
-    minutes_RTC  = str(TimeOnRTC[3])
-    heures_RTC   = str(TimeOnRTC[4])    
+        secondes_RTC = str(TimeOnRTC[2])
+        minutes_RTC  = str(TimeOnRTC[3])
+        heures_RTC   = str(TimeOnRTC[4])    
 
-    secondes_RTC = int(secondes_RTC)
-    minutes_RTC  = int(minutes_RTC)
-    heures_RTC   = int(heures_RTC)    
+        secondes_RTC = int(secondes_RTC)
+        minutes_RTC  = int(minutes_RTC)
+        heures_RTC   = int(heures_RTC)    
 
-    secondes_RTC = hex(secondes_RTC)
-    secondes_RTC = secondes_RTC[2:4]
+        secondes_RTC = hex(secondes_RTC)
+        secondes_RTC = secondes_RTC[2:4]
     
-    print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la RTC \n".format(heures_RTC,minutes_RTC,secondes_RTC))
+        print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la RTC \n".format(heures_RTC,minutes_RTC,secondes_RTC))
+        return secondes_RTC,minutes_RTC,heures_RTC
+    except: 
+        print("\n ----> L'horloge semble disfonctionner ! \n \n ")
+        
 
 timenow_rpi()
 timenow_RTC()
+
+
