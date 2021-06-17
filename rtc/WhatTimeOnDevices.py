@@ -12,17 +12,17 @@ def timenow_rpi():
 def timenow_RTC():
     SLAVE_ADDRESS = 0x51
     bus  = SMBus(1)
-    SECONDS   = 0x03
-    TimeOnRTC = bus.read_i2c_block_data(SLAVE_ADDRESS, SECONDS, 3)
+    CONTROL_1 = 0x00
+    TimeOnRTC = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
     #print(val[2:5]) # Récupère uniquement les secondes, min, sec
     print(type(TimeOnRTC))
     print(TimeOnRTC)
 
-    secondes_RTC = str(TimeOnRTC[0])
-    minutes_RTC  = str(TimeOnRTC[1])
-    heures_RTC   = str(TimeOnRTC[2])    
+    secondes_RTC = str(TimeOnRTC[2])
+    minutes_RTC  = str(TimeOnRTC[3])
+    heures_RTC   = str(TimeOnRTC[4])    
     
-    #secondes_RTC = TimeOnRTC[6]
+    secondes_RTC = TimeOnRTC
 
 
 
