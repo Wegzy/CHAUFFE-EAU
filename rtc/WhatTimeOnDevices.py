@@ -4,7 +4,7 @@ import time
 
 def timenow_rpi():    
     try:
-        global Heure_Recuperee_RPI=None 
+        global Heure_Recuperee_RPI
 
         out = str(check_output("date +%X", shell=True), 'UTF-8')
         heures_rpi = out[0:2]
@@ -24,7 +24,7 @@ def timenow_RTC():
     bus  = SMBus(1)
     CONTROL_1 = 0x00
     try:
-        global Heure_Recuperee_RTC=None
+        global Heure_Recuperee_RTC
         TimeOnRTC = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
         #print(val[2:5]) # Récupère uniquement les secondes, min, sec
         #print(type(TimeOnRTC))
