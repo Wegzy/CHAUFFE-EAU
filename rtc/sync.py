@@ -1,3 +1,6 @@
+#!/usr/bin/python3.9
+#coding: utf-8
+
 from subprocess import check_output,CalledProcessError
 
 def check_sync():
