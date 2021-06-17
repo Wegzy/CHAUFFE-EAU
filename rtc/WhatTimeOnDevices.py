@@ -43,19 +43,19 @@ def timenow_RTC():
         return secondes_RTC,minutes_RTC,heures_RTC,Heure_Recuperee_RTC
         
     except: 
-        print("\n ----> Impossible de récupérer l'heure depuis la RTC ! \n        Vérifier le branchement de l'horloge ! \n ")
+        print("\n ----> Impossible de communiquer avec la RTC ! \n Vérifier son branchement !  \n ")
         Heure_Recuperee_RTC = 1 
         return Heure_Recuperee_RTC
 
 try: 
-    secondes_rpi, minutes_rpi, heures_rpi, Heure_Recuperee_RPI = timenow_rpi()
-    secondes_RTC, minutes_RTC, heures_RTC, Heure_Recuperee_RTC = timenow_RTC()
+    secondes_rpi, minutes_rpi, heures_rpi = timenow_rpi()
+    secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
+
+    if secondes_rpi == secondes_RTC and minutes_rpi == minutes_RTC: 
+        print("L'horloge RTC et la Raspberry sont synchronisés ! ")
+    else:
+        print("Les deux horloges ne sont pas synchronisés ! ")
 
 except:
 
-#    print("Impossible de comparer les heures entre la Raspberry et la RTC !! ")
-
-    
-    Heure_Recuperee_RPI = timenow_rpi()
-    Heure_Recuperee_RTC = timenow_RTC()
-    print("Erreur! !!!! ")
+    print("L'heure n'a pas pu être comparé, ")
