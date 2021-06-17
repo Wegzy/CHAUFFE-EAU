@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html>
+  <title>Graphiques</title>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Heures', 'Consommation en KWh'],
+          ['00h',  100],
+          ['02h',  120],
+          ['04h',  180],
+          ['06h',  200],
+          ['08h',  210],
+          ['10h',  220],
+          ['12h',  230],
+          ['14h',  240],
+          ['16h',  250],
+          ['18h',  260],
+          ['20h',  270],          
+          ['22h',  270]
+          ]);
+
+        var options = {
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  </body>
+</html>

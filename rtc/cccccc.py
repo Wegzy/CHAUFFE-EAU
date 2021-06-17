@@ -20,7 +20,7 @@ MONTHS    = 0x08
 YEARS     = 0x09
 CONTROL_1 = 0x00
 
- val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
+val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
     #print(val[2:5]) # Récupère uniquement les secondes, min, sec
 rtc_sec = str(val[2])
 rtc_min = str(val[3])
