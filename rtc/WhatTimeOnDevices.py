@@ -21,8 +21,19 @@ def timenow_RTC():
     secondes_RTC = str(TimeOnRTC[2])
     minutes_RTC  = str(TimeOnRTC[3])
     heures_RTC   = str(TimeOnRTC[4])    
+
+    secondes_RTC = int(secondes_RTC)
+    minutes_RTC  = int(minutes_RTC)
+    heures_RTC   = int(heures_RTC)    
+
+
+    secondes_RTC = hex(secondes_RTC)
+    minutes_RTC  = hex(minutes_RTC)
+    heures_RTC   = hex(heures_RTC)    
+
+
     
-    secondes_RTC = TimeOnRTC
+    
 
 
 
