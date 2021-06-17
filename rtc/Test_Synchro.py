@@ -12,7 +12,7 @@ def check_sync():
         ip = "1.debian.pool.ntp.org"
         try:
             check_output("ping -c 2 " + ip, shell=True)
-w            print("\n\n Statut 1 : L'horloge est synchronisé \n\n\n")
+            print("\n\n Statut 1 : L'horloge est synchronisé \n\n\n")
         
         except CalledProcessError: 
             print("\n\n Statut 2 : L'horloge n'est plus synchronisé à internet \n\n\n")
