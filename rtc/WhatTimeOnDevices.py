@@ -18,9 +18,9 @@ def timenow_RTC():
     print(type(TimeOnRTC))
     print(TimeOnRTC)
 
-    secondes_RTC = str(TimeOnRTC[1])
-    minutes_RTC  = str(TimeOnRTC[2])
-    heures_RTC   = str(TimeOnRTC[3])    
+    secondes_RTC = str(TimeOnRTC[0])
+    minutes_RTC  = str(TimeOnRTC[1])
+    heures_RTC   = str(TimeOnRTC[2])    
     
     #secondes_RTC = TimeOnRTC[6]
 
