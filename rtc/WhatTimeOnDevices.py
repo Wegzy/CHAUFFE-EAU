@@ -52,8 +52,14 @@ try:
         print("Les deux horloges ne sont pas synchronisés ! ")
 
         if int(heures_RTC) < heures_rpi and heures_RTC < heures_RTC:
-            print("Done")
-
+            print("Done") 
+        elif int(heures_RTC) < heures_rpi and heures_RTC > heures_RTC:
+            print("Done") 
+        elif int(heures_RTC) > heures_rpi and heures_RTC > heures_RTC:
+            print("Done") 
+        elif int(heures_RTC) > heures_rpi and heures_RTC < heures_RTC:
+            print("Done") 
+        
 
         #bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
 
