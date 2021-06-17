@@ -2,10 +2,10 @@ from subprocess import check_output
 from smbus2 import *
 import time
 
-global Heure_Recuperee_RPI = None 
-global Heure_Recuperee_RTC = None
 def timenow_rpi():    
     try:
+        global Heure_Recuperee_RPI=None 
+
         out = str(check_output("date +%X", shell=True), 'UTF-8')
         heures_rpi = out[0:2]
         minutes_rpi = out[3:5]
@@ -24,6 +24,7 @@ def timenow_RTC():
     bus  = SMBus(1)
     CONTROL_1 = 0x00
     try:
+        global Heure_Recuperee_RTC=None
         TimeOnRTC = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
         #print(val[2:5]) # Récupère uniquement les secondes, min, sec
         #print(type(TimeOnRTC))
