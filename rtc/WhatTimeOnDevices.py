@@ -30,7 +30,8 @@ def timenow_RTC():
     minutes_RTC  = hex(minutes_RTC)
     #heures_RTC   = hex(heures_RTC)    
 
-
+    secondes_RTC = secondes_RTC[2:4]
+    minutes_RTC  = minutes_RTC[2:4]
     
     
 
