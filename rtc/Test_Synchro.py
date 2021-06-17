@@ -7,6 +7,7 @@ def check_sync():
 
     out = str(check_output("timedatectl | grep clock", shell=True), 'UTF-8')
     out = out[27:30]
+    
     if out == "yes":
         ip = "1.debian.pool.ntp.org"
         try:
@@ -15,7 +16,7 @@ def check_sync():
         
         except CalledProcessError: 
             print("\n\n\n Statut 2 : L'horloge n'est plus synchronisé à internet \n\n\n")
-    if out == "no": 
+    if out == "no ":
         print("\n\n\n Statut 3 : L'horloge n'est plus du tout synchronisé\n\n\n")
         
 check_sync()    
