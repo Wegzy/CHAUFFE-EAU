@@ -1,2 +1,10 @@
 
 .vscode/settings.json
+rtc_backup/ALARM_return_zero.py
+rtc_backup/rtc.py
+rtc_backup/Set_Time+Alarm.py
+rtc_backup/Set_Time.py
+rtc_backup/sync.py
+rtc_backup/Test_Synchro.py
+rtc_backup/Time.py
+rtc_backup/Time_RTC.py
