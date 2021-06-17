@@ -55,7 +55,7 @@ except:
 
 #    print("Impossible de comparer les heures entre la Raspberry et la RTC !! ")
 
-    try:
-        Heure_Recuperee_RPI = timenow_rpi()
-        Heure_Recuperee_RTC = timenow_RTC()
-        print("Erreur! !!!! ")
+    
+    Heure_Recuperee_RPI = timenow_rpi()
+    Heure_Recuperee_RTC = timenow_RTC()
+    print("Erreur! !!!! ")
