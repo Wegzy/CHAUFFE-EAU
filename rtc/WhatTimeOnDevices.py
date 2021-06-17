@@ -17,10 +17,15 @@ def timenow_RTC():
     #print(val[2:5]) # Récupère uniquement les secondes, min, sec
     print(type(TimeOnRTC))
     print(TimeOnRTC)
+
     secondes_RTC = str(TimeOnRTC[2])
     minutes_RTC  = str(TimeOnRTC[3])
     heures_RTC   = str(TimeOnRTC[4])    
     
+    secondes_RTC = TimeOnRTC[6]
+
+
+
     print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la RTC \n".format(heures_RTC,minutes_RTC,secondes_RTC))
 
 timenow_rpi()
