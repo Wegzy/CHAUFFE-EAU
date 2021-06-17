@@ -15,15 +15,11 @@ def timenow_RTC():
     CONTROL_1 = 0x00
     TimeOnRTC = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
     #print(val[2:5]) # Récupère uniquement les secondes, min, sec
-    
+    print(type(TimeOnRTC))
     secondes_RTC = str(TimeOnRTC[2])
     minutes_RTC  = str(TimeOnRTC[3])
     heures_RTC   = str(TimeOnRTC[4])    
     
-    
-    secondes_RTC = int(hex(secondes_RTC),16)
-    minutes_RTC  = int(hex(minutes_RTC),16)
-    heures_RTC   = int(hex(heures_RTC),16)
     print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la RTC \n".format(heures_RTC,minutes_RTC,secondes_RTC))
 
 timenow_rpi()
