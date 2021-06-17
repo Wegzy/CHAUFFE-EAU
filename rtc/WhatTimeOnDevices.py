@@ -59,7 +59,12 @@ try:
             print("Done") 
         elif int(heures_RTC) > heures_rpi and minutes_RTC < minutes_rpi:
             print("Done") 
-        
+        elif int(heures_RTC) == heures_rpi and minutes_RTC > minutes_rpi:
+            print("Done") 
+        elif int(heures_RTC) == heures_rpi and minutes_RTC < minutes_rpi:
+            print("Done") 
+
+
 
         #bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
 
