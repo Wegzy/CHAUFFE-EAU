@@ -75,6 +75,3 @@ try:
 
     if int(heures_RTC)==int(heures_rpi) and int(minutes_RTC)==int(minutes_rpi): 
         print("L'horloge RTC et la Raspberry sont synchronisés ! ")
-
-    else:
-        print("Les deux horloges ne sont pas synchronisés ! \n\n\n\n\n ")
