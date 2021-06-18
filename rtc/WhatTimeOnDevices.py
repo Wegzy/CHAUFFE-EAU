@@ -73,9 +73,19 @@ try:
     else:
         print(" === L'horloge RTC et la Raspberry ne sont pas identiques ! === ")
         if statut == 0 and int(heures_rpi) > int(heures_RTC):
-            print(" --- La raspberry est en avance sur la RTC --- ")
+            print(" --- La raspberry est à l'heure mais la RTC est en avance d'au moins une heure --- ")
         if statut == 0 and int(heures_rpi) < int(heures_RTC):
-            print(" --- La raspberry est en retard sur la RTC --- ")
+            print(" --- La raspberry est à l'heure mais la RTC est en retard d'au moins une heure --- ")
+        if statut == 0 and int(minutes_rpi) > int(minutes_RTC):
+            print(" --- La raspberry est à l'heure mais la RTC est en avance d'environ moins d'une heure --- ")
+        if statut == 0 and int(minutes_rpi) < int(minutes_RTC):
+            print(" --- La raspberry est à l'heure mais la RTC est en retard d'environ moins d'une heure --- ")
+        
+
+
+
+
+            
 
 except:
     print("-----> Erreur ! <-----")
