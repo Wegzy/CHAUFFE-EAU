@@ -82,13 +82,17 @@ try:
             print(" --- La raspberry est à l'heure mais la RTC est en retard d'environ moins d'une heure --- ")
         
         if statut == 1 and int(heures_rpi) > int(heures_RTC):
-            print(" --- La raspberry est à l'heure (malgré l'abscence du serveur ntp) mais la RTC est en avance d'au moins une heure --- ")
+            print(" --- La raspberry est à l'heure (malgré l'abscence du serveur ntp) mais la RTC \
+                est en avance d'au moins une heure --- ")
         if statut == 1 and int(heures_rpi) < int(heures_RTC):
-            print(" --- La raspberry est à l'heure (malgré l'abscence du serveur ntp) mais la RTC est en retard d'au moins une heure --- ")
+            print(" --- La raspberry est à l'heure (malgré l'abscence du serveur ntp) mais la RTC \
+                est en retard d'au moins une heure elle n'est sans doute pas fiable !! --- ")
         if statut == 1 and int(minutes_rpi) > int(minutes_RTC):
-            print(" --- La raspberry est à l'heure (malgré l'abscence du serveur ntp) mais la RTC est en avance d'environ moins d'une heure --- ")
+            print(" --- La raspberry est à l'heure (malgré l'abscence du serveur ntp) mais la RTC \
+                 est en avance d'environ moins d'une heure --- ")
         if statut == 1 and int(minutes_rpi) < int(minutes_RTC):
-            print(" --- La raspberry est à l'heure (malgré l'abscence du serveur ntp) mais la RTC est en retard d'environ moins d'une heure --- ")
+            print(" --- La raspberry est à l'heure (malgré l'abscence du serveur ntp) mais la RTC \
+                est en retard d'environ moins d'une heure elle n'est sans doute pas fiable !! --- ")
             
         if statut == 2 and int(heures_rpi) > int(heures_RTC):
             print(" --- La raspberry n'est plus à l'heure, la RTC est en avance d'au moins une heure --- ")
