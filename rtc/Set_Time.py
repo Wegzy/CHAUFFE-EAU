@@ -26,7 +26,7 @@ def Set_time_RTC():
         minutes  = int(input("Minutes : "))
         secondes = int(input("Secondes : "))
     except:
-        print("Saisie Incorrecte, il faut entrer des nombes ! ")
+        print("Saisie Incorrecte, il faut entrer des nombres ! ")
         Set_time_RTC()
 
     print("L'heure va être synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))

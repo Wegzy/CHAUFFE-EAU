@@ -74,9 +74,5 @@ try:
         print("Vérification du statut de synchronisation de la Raspberry  :")
         try: 
             statut = check_sync() 
-            if statut == 2:
+            if statut == 1:
                 print("Synchronisation de la RTC en cours ...")
-
-
-
-
