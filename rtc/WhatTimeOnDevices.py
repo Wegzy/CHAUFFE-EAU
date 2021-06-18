@@ -78,6 +78,4 @@ try:
         print("Les deux horloges ne sont pas synchronisés ! \n\n\n\n\n ")
         print("Vérification du statut de synchronisation de la Raspberry  :")
         try: 
-            statut = check_sync() 
-#            if statut == 1:
-#                print("Synchronisation de la RTC en cours ...")
+            statut = check_sync()
