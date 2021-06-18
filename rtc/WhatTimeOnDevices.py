@@ -78,4 +78,3 @@ try:
 
     else:
         print("Les deux horloges ne sont pas synchronisés ! \n\n\n\n\n ")
-        print("Vérification du statut de synchronisation de la Raspberry  :")
