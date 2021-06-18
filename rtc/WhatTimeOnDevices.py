@@ -65,15 +65,12 @@ def check_sync():
         statut = 2
         return statut
 
-timenow_rpi()
-timenow_RTC()
-
-
-secondes_rpi, minutes_rpi, heures_rpi = timenow_rpi()
-secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
-
-statut = check_sync()
-
+try:
+    secondes_rpi, minutes_rpi, heures_rpi = timenow_rpi()
+    secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
+    statut = check_sync()
+except:
+    print("Erreur ! ")
 """
 
 try:
