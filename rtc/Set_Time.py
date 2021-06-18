@@ -26,13 +26,11 @@ def Set_time_RTC():
         minutes  = int(input("Minutes : "))
         secondes = int(input("Secondes : "))
     except:
+        print("Saisie Incorrecte, il faut entrer des nombes ! ")
         Set_time_RTC()
-    
+
     print("L'heure va être synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
              
-    secondes = int(secondes) 
-    minutes  = int(minutes)
-    heures   = int(heures)
     bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
     
     val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
