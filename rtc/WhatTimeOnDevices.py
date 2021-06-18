@@ -20,6 +20,7 @@ def timenow_rpi():
         
     except: 
         print(" Impossible de récupérer l'heure de la Raspberry ! ")       
+
 def timenow_RTC():
     SLAVE_ADDRESS = 0x51
     bus  = SMBus(1)
@@ -41,6 +42,7 @@ def timenow_RTC():
         
     except: 
         print("\n ----> Impossible de communiquer avec la RTC ! \n Vérifier son branchement !  \n ")
+
 def check_sync():
 
     out = str(check_output("timedatectl | grep clock", shell=True), 'UTF-8')
@@ -66,16 +68,3 @@ def check_sync():
         print("\n\n Statut 2 : L'horloge n'est plus du tout synchronisé \n\n\n")
         statut = 2
         return statut
-
-try: 
-    secondes_rpi, minutes_rpi, heures_rpi = timenow_rpi()
-    secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
-
-    if int(heures_RTC)==int(heures_rpi) and int(minutes_RTC)==int(minutes_rpi): 
-        print("L'horloge RTC et la Raspberry sont synchronisés ! ")
-
-    else:
-        print("Les deux horloges ne sont pas synchronisés ! \n\n\n\n\n ")
-        print("Vérification du statut de synchronisation de la Raspberry  :")
-        try:
-            statut = check_sync()
