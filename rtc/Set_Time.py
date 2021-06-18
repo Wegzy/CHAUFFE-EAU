@@ -24,16 +24,10 @@ def Set_time_RTC():
     try:
         heures   = int(input("Heures : "))
         if((heures<0) or (heures>24)):
-            heures=int('erreur')
             print("Merci de rentrer une heure entre 0 et 24h")
+            heures=int('erreur')
         minutes  = int(input("Minutes : "))
-        if((heures<0) or (heures>24)):
-            heures=int('erreur')
-            print("Merci de rentrer une min entre 0 et 24h")
         secondes = int(input("Secondes : "))
-        if((heures<0) or (heures>24)):
-            heures=int('erreur')
-            print("Merci de rentrer une heure entre 0 et 24h")
         print("L'heure va être synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
              
         bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
