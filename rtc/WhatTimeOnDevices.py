@@ -1,8 +1,6 @@
 #!/usr/bin/python3.9
 #coding: utf-8
 
-
-
 from subprocess import check_output,CalledProcessError
 from smbus2 import *
 import time
@@ -17,7 +15,6 @@ def timenow_rpi():
         print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la Raspberry".format(heures_rpi,minutes_rpi,secondes_rpi))
         
         return secondes_rpi, minutes_rpi, heures_rpi
-        
     except: 
         print(" Impossible de récupérer l'heure de la Raspberry ! ")       
 
@@ -68,8 +65,3 @@ def check_sync():
         print("\n\n Statut 2 : L'horloge n'est plus du tout synchronisé \n\n\n")
         statut = 2
         return statut
-
-try: 
-    secondes_rpi, minutes_rpi, heures_rpi = timenow_rpi()
-    secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
-
