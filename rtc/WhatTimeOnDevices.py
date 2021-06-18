@@ -69,13 +69,13 @@ try:
     secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
     statut = check_sync()
     if int(heures_RTC)==int(heures_rpi) and int(minutes_RTC)==int(minutes_rpi): 
-        print("L'horloge RTC et la Raspberry sont synchronisés ! ")
+        print(" === L'horloge RTC et la Raspberry sont synchronisés ! === ")
     else:
-        print("L'horloge RTC et la Raspberry ne sont pas synchronisés ! ")
+        print(" === L'horloge RTC et la Raspberry ne sont pas synchronisés ! === ")
         if statut == 0 and int(heures_rpi) > int(heures_RTC):
-            print("La raspberry est en avance sur la RTC")
+            print(" --- La raspberry est en avance sur la RTC --- ")
         if statut == 0 and int(heures_rpi) < int(heures_RTC):
-            print("La raspberry est en retard sur la RTC")
+            print(" --- La raspberry est en retard sur la RTC --- ")
 
 except:
     print("-----> Erreur ! <-----")
