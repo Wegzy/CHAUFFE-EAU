@@ -71,4 +71,27 @@ timenow_RTC()
 
 
 secondes_rpi, minutes_rpi, heures_rpi = timenow_rpi()
+secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
+
 statut = check_sync()
+
+"""
+
+try:
+    secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
+    
+except: 
+    print("Impossible de récupérer les heures ! ")
+
+if int(heures_RTC)==int(heures_rpi) and int(minutes_RTC)==int(minutes_rpi): 
+        print("L'horloge RTC et la Raspberry sont synchronisés ! ")
+
+else:
+    print("Les deux horloges ne sont pas synchronisés ! \n\n\n\n\n ")
+    print("Vérification du statut de synchronisation de la Raspberry  :")
+    try: 
+        statut = check_sync() 
+        if statut == 1:
+            print("Synchronisation de la RTC en cours ...")
+
+            """
