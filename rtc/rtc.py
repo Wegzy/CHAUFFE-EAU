@@ -63,10 +63,6 @@ bus.write_i2c_block_data(SLAVE_ADDRESS, WEEKDAY_ALARM, [0x80])
 
 """
 while True: 
-    print(bus.read_block_data(SLAVE_ADDRESS, CONTROL_1, 9))
-    print(bus.read_byte(SLAVE_ADDRESS, CONTROL_1))
-    print(bus.read_byte_data(SLAVE_ADDRESS, CONTROL_1, 9))
-    print(bus.read_word_data(SLAVE_ADDRESS, CONTROL_1, 9))
     print(bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9))
     time.sleep(8)
 
