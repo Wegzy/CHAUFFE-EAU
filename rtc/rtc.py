@@ -53,7 +53,7 @@ clkout32 =  0b11000000
 clkout1 = 0b11000110
 clkout1024 = 0b11000101
 """ ########### """
-
+"""
 bus.write_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, data)
 bus.write_i2c_block_data(SLAVE_ADDRESS, SECOND_ALARM, [0x02])
 bus.write_i2c_block_data(SLAVE_ADDRESS, MINUTE_ALARM, [0x30])
@@ -61,9 +61,16 @@ bus.write_i2c_block_data(SLAVE_ADDRESS, HOUR_ALARM, [0x11])
 bus.write_i2c_block_data(SLAVE_ADDRESS, DAY_ALARM, [0x80])
 bus.write_i2c_block_data(SLAVE_ADDRESS, WEEKDAY_ALARM, [0x80])
 
+"""
 while True: 
+    print(bus.read_block_data(SLAVE_ADDRESS, CONTROL_1, 9))
+    print(bus.read_byte(SLAVE_ADDRESS, CONTROL_1, 9))
+    print(bus.read_byte_data(SLAVE_ADDRESS, CONTROL_1, 9))
+    print(bus.read_word_data(SLAVE_ADDRESS, CONTROL_1, 9))
+    
+
 	print(bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9))
-	time.sleep(2)
+	time.sleep(8)
 
 
 

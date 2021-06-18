@@ -37,15 +37,9 @@ def Set_time_RTC():
         if (secondes<0) or (secondes>60):
             print("Merci de rentrer une seconde entre 0 et 60")
             secondes=int('erreur')
-
-        
-
-        
-        
+            
         print("L'heure va être synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
-             
         bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
-        
         val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
         #print(val[2:5]) # Récupère uniquement les secondes, min, sec
         rtc_sec   = str(val[2])
