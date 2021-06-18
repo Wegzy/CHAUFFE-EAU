@@ -22,19 +22,32 @@ CONTROL_1 = 0x00
 
 def Set_time_RTC():
     try:
-        heures   = int(input("Heures : "))
-        if((heures<0) or (heures>24)):
-            print("Merci de rentrer une heure entre 0 et 24h")
+        
+        heures = int(input("Heures : "))
+        if ((heures<0) or (heures>24)):
+            print("Merci de rentrer une heure entre 0 et 24")
             heures=int('erreur')
-        minutes  = int(input("Minutes : "))
+        
+        minutes = int(input("Minutes : "))
+        if (minutes<0) or (minutes>60) :
+            print("Merci de rentrer une minute entre 0 et 60")
+            minutes=int('erreur')
+
         secondes = int(input("Secondes : "))
+        if (secondes<0) or (secondes>60):
+            print("Merci de rentrer une seconde entre 0 et 60")
+            secondes=int('erreur')
+
+        
+
+        
+        
         print("L'heure va être synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
              
         bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
         
         val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
         #print(val[2:5]) # Récupère uniquement les secondes, min, sec
-        print(int(val[2],2))
         rtc_sec   = str(val[2])
         rtc_min   = str(val[3])
         rtc_hours = str(val[4])
