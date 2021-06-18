@@ -40,6 +40,7 @@ def timenow_RTC():
         
     except: 
         print("\n ----> Impossible de communiquer avec la RTC ! \n Vérifier son branchement !  \n ")
+
 def check_sync():
 
     out = str(check_output("timedatectl | grep clock", shell=True), 'UTF-8')
@@ -78,4 +79,4 @@ try:
 
 
 except:
-    print("Erreur ! ")
+    print("-----> Erreur ! <-----")
