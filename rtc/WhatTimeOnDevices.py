@@ -69,7 +69,7 @@ def check_sync():
 timenow_rpi()
 timenow_RTC()
 
-"""try: 
+try: 
     secondes_rpi, minutes_rpi, heures_rpi = timenow_rpi()
     secondes_RTC, minutes_RTC, heures_RTC = timenow_RTC()
 
@@ -82,4 +82,6 @@ timenow_RTC()
         try: 
             statut = check_sync() 
             if statut == 1:
-                print("Synchronisation de la RTC en cours ...")"""
+                print("Synchronisation de la RTC en cours ...")
+except: 
+    print("Attention, ne fonctionne pas ! ")
