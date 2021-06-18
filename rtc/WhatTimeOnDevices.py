@@ -1,8 +1,6 @@
 #!/usr/bin/python3.9
 #coding: utf-8
 
-
-
 from subprocess import check_output,CalledProcessError
 from smbus2 import *
 import time
@@ -76,7 +74,8 @@ try:
         print("L'horloge RTC et la Raspberry ne sont pas synchronisés ! ")
         if statut == 0 and int(heures_rpi) > int(heures_RTC):
             print("La raspberry est en avance sur la RTC")
-
+        elif statut == 0 and int(heures_rpi) < int(heures_RTC):
+            print("La raspberry est en retard sur la RTC")
 
 except:
     print("-----> Erreur ! <-----")
