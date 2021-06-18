@@ -7,9 +7,6 @@ def check_sync():
 
     out = str(check_output("timedatectl | grep clock", shell=True), 'UTF-8')
     out = out[27:30]
-    
-    statut = None
-    
 
     if out == "yes":
         ip = "1.debian.pool.ntp.org"
@@ -26,4 +23,4 @@ def check_sync():
         print("\n\n Statut 2 : L'horloge de la RPI n'est plus du tout synchronisé \n\n\n")
         statut = 2
 
-check_sync()    
+statut = check_sync()    

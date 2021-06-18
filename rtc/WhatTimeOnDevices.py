@@ -14,8 +14,7 @@ def timenow_rpi():
         heures_rpi = out[0:2]
         minutes_rpi = out[3:5]
         secondes_rpi = out[6:8]
-        print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la Raspberry".format(heures_rpi,minutes_rpi,secondes_rpi))
-        
+        print("\n ----> Il est {0} heures, {1} minutes et {2} secondes sur la Raspberry".format(heures_rpi,minutes_rpi,secondes_rpi))        
         return secondes_rpi, minutes_rpi, heures_rpi
         
     except: 
@@ -53,16 +52,16 @@ def check_sync():
         ip = "1.debian.pool.ntp.org"
         try:
             check_output("ping -c 2 " + ip, shell=True)
-            print("\n\n Statut 0 : L'horloge est synchronisé \n\n\n")
+            print("\n\n Statut 0 : L'horloge de la RPI est synchronisé \n\n\n")
             statut = 0
             return statut
     
         except CalledProcessError: 
-            print("\n\n Statut 1 : L'horloge n'est plus synchronisé à internet \n\n\n")
+            print("\n\n Statut 1 : L'horloge de la RPI n'est plus synchronisé à internet \n\n\n")
             statut = 1
             return statut
     else:
-        print("\n\n Statut 2 : L'horloge n'est plus du tout synchronisé \n\n\n")
+        print("\n\n Statut 2 : L'horloge de la RPI n'est plus du tout synchronisé \n\n\n")
         statut = 2
         return statut
 
