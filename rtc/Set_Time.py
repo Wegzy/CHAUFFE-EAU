@@ -21,10 +21,13 @@ YEARS     = 0x09
 CONTROL_1 = 0x00
 
 def Set_time_RTC():
-    heures   = input("Heures : ")
-    minutes  = input("Minutes : ")
-    secondes = input("Secondes : ")    
-
+    try:
+        heures   = int(input("Heures : "))
+        minutes  = int(input("Minutes : "))
+        secondes = int(input("Secondes : "))
+    except:
+        Set_time_RTC()
+    
     print("L'heure va être synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
              
     secondes = int(secondes) 

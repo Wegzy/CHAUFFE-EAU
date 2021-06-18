@@ -76,3 +76,7 @@ try:
             statut = check_sync() 
             if statut == 2:
                 print("Synchronisation de la RTC en cours ...")
+
+
+
+
