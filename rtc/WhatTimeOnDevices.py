@@ -73,6 +73,8 @@ try:
         print("L'horloge RTC et la Raspberry sont synchronisés ! ")
     else:
         print("L'horloge RTC et la Raspberry ne sont pas synchronisés ! ")
+        if statut == 1 and int(heures_rpi) > int(heures_RTC):
+            print("La raspberry est en avance sur la RTC")
 
 
 except:
