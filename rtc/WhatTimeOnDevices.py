@@ -1,3 +1,8 @@
+#!/usr/bin/python3.9
+#coding: utf-8
+
+
+
 from subprocess import check_output,CalledProcessError
 from smbus2 import *
 import time
