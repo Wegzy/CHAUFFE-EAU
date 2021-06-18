@@ -13,14 +13,14 @@ def check_sync():
         try:
             check_output("ping -c 2 " + ip, shell=True)
             print("\n\n Statut 0 : L'horloge de la RPI est synchronisé \n\n\n")
-            statut = 0
+            
     
         except CalledProcessError: 
             print("\n\n Statut 1 : L'horloge de la RPI n'est plus synchronisé à internet \n\n\n")
-            statut = 1
+            
             
     else:
         print("\n\n Statut 2 : L'horloge de la RPI n'est plus du tout synchronisé \n\n\n")
-        statut = 2
+        
 
-statut = check_sync()    
+check_sync()    
