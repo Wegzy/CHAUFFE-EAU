@@ -18,4 +18,4 @@ def datenow_rpi ():
     print("\nJour : {0}\nMois : {1} \nAnnée :{2}\n\n".format(Jour,Mois,Année))
     
 timenow_rpi()
-datenow_rpi()
+

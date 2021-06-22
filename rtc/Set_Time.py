@@ -38,7 +38,6 @@ def Set_time_RTC():
         print("L'heure va être synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
         bus.write_i2c_block_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
         val = bus.read_i2c_block_data(SLAVE_ADDRESS, CONTROL_1, 9)
-        #print(val[2:5]) # Récupère uniquement les secondes, min, sec
         rtc_sec   = str(val[2])
         rtc_min   = str(val[3])
         rtc_hours = str(val[4])
