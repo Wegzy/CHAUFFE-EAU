@@ -38,12 +38,9 @@ def Set_time_RTC():
         print("L'heure va être synchronisée sur : {0} Heures, {1} Minutes, {2} Secondes".format(heures,minutes,secondes))
 
         heures = bin(heures)
-        print(heures)
         minutes = bin(minutes)
-        print(minutes)
         secondes = bin(secondes)
-        print(secondes)
-
+        
         bus.write_byte_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
         #val = bus.read_byte_data(SLAVE_ADDRESS, SECONDS)
         print(val)
