@@ -45,7 +45,7 @@ def Set_time_RTC():
         print(secondes)
 
         bus.write_byte_data(SLAVE_ADDRESS, SECONDS, [secondes,minutes,heures])
-        val = bus.read_byte_data(SLAVE_ADDRESS, SECONDS)
+        #val = bus.read_byte_data(SLAVE_ADDRESS, SECONDS)
         print(val)
     except:
         print("Test")
